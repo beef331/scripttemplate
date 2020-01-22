@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace ScriptTemplate
 {
-	[AttributeUsage (AttributeTargets.Class), InitializeOnLoad]
+	[AttributeUsage (AttributeTargets.Class|AttributeTargets.Struct,Inherited = false),InitializeOnLoad]
 	public class Templated : Attribute
 	{
 #if UNITY_EDITOR
