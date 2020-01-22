@@ -31,5 +31,5 @@ public class Script{
 
 }
 ```
-Then on recompile the appropriate files will be made to enable the templated files
+Then on recompile the appropriate files will be made to enable the templated files.
 
