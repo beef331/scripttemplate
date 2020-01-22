@@ -28,7 +28,7 @@ public class {0}Template{
 	[MenuItem(""Assets/Create/C# Template/{0}"""",false,10)]
 	public static void CreateScript()
 	{
-		string file = Application.dataPath +@""/ScriptTemplate/Templates/{0}.cs.txt"";
+		string file = Application.dataPath +@""/ScriptTemplator/Templates/{0}.cs.txt"";
 		ProjectWindowUtil.CreateScriptAssetFromTemplateFile(file,""""{0}"".cs"");
 	}
 	}
