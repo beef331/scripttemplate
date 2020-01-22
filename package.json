@@ -1,0 +1,17 @@
+{
+    "name": "com.beef331.scripttemplate",
+    "version": "1.0.0",
+    "displayName": "Script Template",
+    "description": "Easily make scripts into templates, so you can create new scripts quickly",
+    "unity": "2018.1",
+    "dependencies": {},
+    "keywords": [
+        "Template",
+        "Quality of life",
+        "Script Templates"
+    ],
+    "author": {
+        "name": "Jason Beetham",
+        "url": "https://www.jasonbeetham.com/"
+    }
+}
