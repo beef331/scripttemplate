@@ -10,7 +10,10 @@ using UnityEngine;
 
 namespace ScriptTemplate
 {
-	[AttributeUsage (AttributeTargets.Class|AttributeTargets.Struct,Inherited = false),InitializeOnLoad]
+#if UNITY_EDITOR
+	[InitializeOnLoad]
+#endif
+	[AttributeUsage (AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
 	public class Templated : Attribute
 	{
 #if UNITY_EDITOR
@@ -132,14 +135,14 @@ public class {0}Template{
 
 			foreach (string dir in Directory.GetFiles (csharpPath))
 			{
-				if (!foundTypes.Contains (Path.GetFileNameWithoutExtension (dir).Replace("Template","")) && Path.GetExtension (dir) == ".cs")
+				if (!foundTypes.Contains (Path.GetFileNameWithoutExtension (dir).Replace ("Template", "")) && Path.GetExtension (dir) == ".cs")
 				{
 					File.Delete (dir);
 				}
 			}
 			foreach (string dir in Directory.GetFiles (templatePath))
 			{
-				if (!foundTypes.Contains (Path.GetFileNameWithoutExtension (dir).Replace(".cs","")) && Path.GetExtension (dir) == ".txt")
+				if (!foundTypes.Contains (Path.GetFileNameWithoutExtension (dir).Replace (".cs", "")) && Path.GetExtension (dir) == ".txt")
 				{
 					File.Delete (dir);
 				}
