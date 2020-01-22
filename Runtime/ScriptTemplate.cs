@@ -78,11 +78,12 @@ public class {0}Template{
 			Directory.CreateDirectory (csharpPath);
 			if (!AssetDatabase.LoadAssetAtPath (asmdefPath, typeof (UnityEditor.Compilation.Assembly)))
 			{
-				using (StreamWriter sw = new StreamWriter (File.Open (root + "/" + asmdefPath, FileMode.Create)))
+				using (StreamWriter sw = new StreamWriter (File.Open (Path.GetFullPath (Path.Combine (root, asmdefPath.Substring(1))), FileMode.Create)))
 				{
 					sw.Write (asmdef);
 				}
 			}
+
 			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies ();
 			foreach (Assembly ass in assemblies)
 			{
@@ -106,7 +107,7 @@ public class {0}Template{
 						if (!string.IsNullOrEmpty (asset))
 						{
 							foundTypes.Add (t.ToString ());
-							string file = File.ReadAllText (root + "/" + asset);
+							string file = File.ReadAllText (Path.GetFullPath (Path.Combine (root, asset.Substring(0))));
 							file = Regex.Replace (file, scriptPattern, "");
 							file = file.Replace (t.ToString (), "#SCRIPTNAME#");
 							string template = Path.Combine (templatePath, t.ToString () + ".cs.txt");
